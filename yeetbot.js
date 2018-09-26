@@ -49,9 +49,9 @@ client.on("message", (message) => {
         const attachment = new Discord.Attachment('https://i.redd.it/jx308gsx5e511.png');
         // Send the attachment in the message channel with a content
         message.channel.send("THAT FETUS", attachment);
-    } else if (command === 'brstatus') {
+    } else if (command === 'brapiversion') {
         try {
-            api.status().then(r => console.log(r));
+            api.status().then(r => console.log(r.data.attributes.version + " " + r.data.attributes.releasedAt));
         }
         catch(exception){
             console.log(exception.message);

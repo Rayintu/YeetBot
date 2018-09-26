@@ -2,6 +2,10 @@ const Discord = require("discord.js");
 const Attachment = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
+const battleriteconfig = require("./battleriteconfig.json");
+
+const Battlerite_Dev = require('node_modules/battlerite-dev');
+const api = new Battlerite_Dev({key: battleriteconfig.token});
 
 const fs = require("fs")
 
@@ -50,7 +54,14 @@ client.on("message", (message) => {
         const attachment = new Discord.Attachment('https://i.redd.it/jx308gsx5e511.png');
         // Send the attachment in the message channel with a content
         message.channel.send("THAT FETUS", attachment);
-    }
+  }else
+
+  if (command === 'battleriteStatus') {
+
+  }
+
+
+
 });
 
 client.login(config.token);

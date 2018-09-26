@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "battlerite-dev": "^1.2.0",
     "discord.js": "^11.4.2"
   }
 }

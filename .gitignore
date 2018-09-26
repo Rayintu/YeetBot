@@ -73,3 +73,6 @@ typings/
 .serverless
 
 config.json
+battleriteconfig.json
+
+battleriteconfig

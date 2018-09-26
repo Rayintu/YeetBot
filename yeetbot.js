@@ -50,8 +50,14 @@ client.on("message", (message) => {
         // Send the attachment in the message channel with a content
         message.channel.send("THAT FETUS", attachment);
     } else if (command === 'brstatus') {
-        api.status().then(r => console.log(r));
+        try {
+            api.status().then(r => console.log(r));
+        }
+        catch(exception){
+            console.log(exception.message);
+        }
         message.channel.send("status checked");
+        message.channel.send("check console for status");
     }
 
 });

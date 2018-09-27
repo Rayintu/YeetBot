@@ -26,18 +26,6 @@ client.on("message", (message) => {
     args = message.content.slice(prefix.length).trim().split(/ +/g);
     command = args.shift().toLowerCase();
 
-
-
-    if (message.content.startsWith(config.discord.prefix + "yeetSetprefix")) {
-        // Gets the prefix from the command (eg. "!prefix +" it will take the "+" from it)
-        let newPrefix = message.content.split(" ").slice(1, 2)[0];
-        // change the configuration in memory
-        config.prefix = newPrefix;
-
-        // Now we have to save the file.
-        fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
-    }
-
     if (command === 'ping') {
         message.channel.send("pong!");
     } else if (command === 'test') {
@@ -56,11 +44,7 @@ client.on("message", (message) => {
         catch(exception){
             console.log(exception.message);
         }
-    } else if (command === 'sayversion'){
-
     }
-
-
 });
 
 client.login(config.discord.token);

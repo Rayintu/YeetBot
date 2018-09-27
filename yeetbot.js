@@ -51,14 +51,15 @@ client.on("message", (message) => {
         message.channel.send("THAT FETUS", attachment);
     } else if (command === 'brapiversion') {
         try {
-            api.status().then(r => console.log(r.data.attributes.version + " " + r.data.attributes.releasedAt));
+            api.status().then(r => message.channel.send(r.data.attributes.version + " " + r.data.attributes.releasedAt));
         }
         catch(exception){
             console.log(exception.message);
         }
-        message.channel.send("status checked");
-        message.channel.send("check console for status");
+    } else if (command === 'sayversion'){
+
     }
+
 
 });
 
